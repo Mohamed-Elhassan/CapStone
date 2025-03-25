@@ -1,3 +1,13 @@
+remote_theme: pages-themes/cayman@v0.2.0
+plugins:
+- jekyll-remote-theme # add this line to the plugins list if you already have one
+# title: Mohamed Elhassan
+description: Computer Science ePortfolio
+show_downloads: false
+google_analytics:
+theme: jekyll-theme-cayman
+
+
 ###########################################################
 ### Welcome to Beautiful Jekyll!
 ### This config file is meant for settings that affect your entire website. When you first
