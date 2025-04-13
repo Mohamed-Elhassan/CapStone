@@ -5,7 +5,7 @@ function verifyToken(req, res, next) {
 
     const authHeader = req.headers['authorization'];
     if (!authHeader) {
-        console.log("❌ No Authorization header received");
+        console.log("No Authorization header received");
         return res.status(401).json({ message: 'Unauthorized: No token provided' });
     }
 
@@ -14,7 +14,7 @@ function verifyToken(req, res, next) {
 
     jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
         if (err) {
-            console.error("🚨 JWT Verification Error:", err.message);
+            console.error("JWT Verification Error:", err.message);
             return res.status(401).json({ message: 'Unauthorized: Invalid token' });
         }
 

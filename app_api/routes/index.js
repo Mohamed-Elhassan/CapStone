@@ -5,6 +5,7 @@ const verifyToken = require('../middleware/verifyToken'); // Import authenticati
 // Import controllers
 const tripsController = require('../controllers/trips');
 const authController = require('../controllers/authentication');
+const workoutController = require('../controllers/workouts');
 
 console.log('🔑 JWT_SECRET:', process.env.JWT_SECRET);
 
@@ -20,11 +21,13 @@ router
 router
     .route('/trips')
     .get(tripsController.tripsList)
-    .post(verifyToken, tripsController.tripsAddTrip);  // ✅ Uses `verifyToken`
+    .post(verifyToken, tripsController.tripsAddTrip);  // Uses `verifyToken`
 
 router
     .route('/trips/:tripCode')
     .get(tripsController.tripsFindByCode)
-    .put(verifyToken, tripsController.tripsUpdateTrip);  // ✅ Uses `verifyToken`
+    .put(verifyToken, tripsController.tripsUpdateTrip);  // Uses `verifyToken`
+
+router.get('/workout/today', workoutController.getTodaysWorkout);
 
 module.exports = router;

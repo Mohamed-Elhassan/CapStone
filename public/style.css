@@ -572,37 +572,3 @@ hr.underline {
     color: #FFFFFF;
     background-color: #03A9F4;
 }
-
-/* Navbar and Footer dropdown menus */
-.dropdown-menu {
-    background-color: #343a40;
-    border: none;
-}
-
-.dropdown-menu-up {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-}
-
-.dropdown-item {
-    color: #ffffff;
-    padding: 0.5rem 1.5rem;
-}
-
-.dropdown-item:hover {
-    background-color: #495057;
-    color: #ffffff;
-}
-
-.dropdown-item.active {
-    background-color: #495057;
-    color: #ffffff;
-}
-
-.dropdown-toggle {
-    color: #ffffff;
-}
-
-.dropdown-toggle:hover {
-    color: #ffffff;
-}
