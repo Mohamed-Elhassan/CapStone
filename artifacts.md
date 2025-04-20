@@ -36,4 +36,12 @@ Below is a code review link and PDFs I’ve included in this portfolio. Click an
       Databases Artifact (PDF)
     </a>
   </li>
+  <li>
+    <a 
+      href="{{ '/assets/css/pdfs/selfassessment.pdf' | relative_url }}" 
+      download="selfassessment.pdf"
+    >
+      Self Assessment (PDF)
+    </a>
+  </li>
 </ul>
