@@ -9,5 +9,16 @@ I’m Mohamed Elhassan, a Computer Science student at SNHU finishing up my capst
 
 When I’m not coding, you can find me experimenting with small Raspberry Pi hardware projects, at the gym, or exploring many other activites Im interested in.
 
+Right now, my focus is on expanding my cloud skills—learning AWS services, Kubernetes, and infrastructure as code. I have experience with:
+
+- Front-end development (HTML5, CSS3, JavaScript/TypeScript, React, Angular)  
+- Back-end APIs (Node.js, Express)  
+- Data modeling & management (MongoDB, SQL)  
+- API integrations (REST, GraphQL)  
+- CI/CD pipelines (Jenkins, Ansible)  
+- Agile methodologies & project management (Jira, custom made tracking application)  
+- Containerization & orchestration (Docker)  
+- Infrastructure as Code
+
 ---
 
