@@ -1,7 +1,6 @@
 # site meta
 title:       "Mohamed Elhassan"
 description: "Computer Science ePortfolio"
-url:         "https://mohamed-elhassan.github.io"
 baseurl:     "/CapStone"
 
 # cayman via remote_theme
