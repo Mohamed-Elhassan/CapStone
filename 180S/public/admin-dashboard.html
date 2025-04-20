@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Dashboard - 180S</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><i class="fas fa-undo-alt"></i> 180S</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="WOD.html">Workout of The Day</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+              Meal Plans
+            </a>
+            <div class="dropdown-menu shadow" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item text-white" href="mealplans.html">No Effort</a>
+              <a class="dropdown-item text-white" href="LowEffort.html">Low Effort</a>
+              <a class="dropdown-item text-white" href="FullEffort.html">Full Effort</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="revisions.html">Revisions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://buymeacoffee.com/zenpack" target="_blank">Buy Me a Coffee :)</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="login.html" id="loginLink">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-light ml-2" href="signup.html" id="signupLink">Sign Up</a>
+          </li>
+          <li class="nav-item d-none" id="userNameContainer">
+            <a class="nav-link" href="profile.html" id="userName"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-5 pt-5 mb-5">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="text-center mb-4">Admin Dashboard</h1>
+        
+        <!-- User Management Section -->
+        <div class="card bg-dark text-white mb-4">
+          <div class="card-body">
+            <h3 class="card-title">Manage Users</h3>
+            <div class="table-responsive">
+              <table class="table table-dark">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Admin Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="usersContainer">
+                  <!-- Users will be loaded here -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Meal Plans Management Section -->
+        <div class="card bg-dark text-white mb-4">
+          <div class="card-body">
+            <h3 class="card-title">Manage Meal Plans</h3>
+            <div class="row" id="mealPlansContainer">
+              <!-- Meal plans will be loaded here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer" class="bg-dark text-white text-center py-3">
+    <div class="d-flex justify-content-center">
+      <ul class="navigation list-inline mb-0">
+        <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
+        <li class="list-inline-item"><a href="WOD.html" class="text-white">Workout of The Day</a></li>
+        <li class="list-inline-item dropdown">
+          <a class="text-white dropdown-toggle" href="#" id="footerDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Meal Plans
+          </a>
+          <div class="dropdown-menu shadow" aria-labelledby="footerDropdown">
+            <a class="dropdown-item text-white" href="mealplans.html">No Effort</a>
+            <a class="dropdown-item text-white" href="LowEffort.html">Low Effort</a>
+            <a class="dropdown-item text-white" href="FullEffort.html">Full Effort</a>
+            <a class="dropdown-item text-white" href="saved-meal-plans.html">Saved</a>
+          </div>
+        </li>
+        <li class="list-inline-item"><a href="about.html" class="text-white">About</a></li>
+        <li class="list-inline-item"><a href="contact.html" class="text-white">Contact</a></li>
+        <li class="list-inline-item"><a href="revisions.html" class="text-white">Revisions</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  <script>
+    // Check if user is admin
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (!user || !user.isAdmin) {
+      window.location.href = 'admin.html';
+    }
+
+    // Load meal plans
+    async function loadMealPlans() {
+      try {
+        const token = localStorage.getItem('token');
+        const response = await fetch('/api/mealPlans', {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+        const mealPlans = await response.json();
+        
+        const container = document.getElementById('mealPlansContainer');
+        container.innerHTML = '';
+        
+        mealPlans.forEach(plan => {
+          const col = document.createElement('div');
+          col.className = 'col-md-4 mb-3';
+          
+          col.innerHTML = `
+            <div class="card bg-secondary text-white">
+              <div class="card-body">
+                <h5 class="card-title">${plan.name}</h5>
+                <p class="card-text">
+                  <strong>Effort Level:</strong> ${plan.effortLevel}<br>
+                  <strong>Calories:</strong> ${plan.calories}<br>
+                  <strong>Fat:</strong> ${plan.fat}g<br>
+                  <strong>Carbs:</strong> ${plan.carbs}g<br>
+                  <strong>Protein:</strong> ${plan.protein}g
+                </p>
+                <button onclick="deleteMealPlan('${plan._id}')" class="btn btn-danger">
+                  <i class="fas fa-trash"></i> Delete
+                </button>
+              </div>
+            </div>
+          `;
+          
+          container.appendChild(col);
+        });
+      } catch (error) {
+        console.error('Error loading meal plans:', error);
+      }
+    }
+
+    // Delete meal plan
+    async function deleteMealPlan(id) {
+      if (!confirm('Are you sure you want to delete this meal plan?')) {
+        return;
+      }
+
+      try {
+        const token = localStorage.getItem('token');
+        const response = await fetch(`/api/mealPlans/${id}`, {
+          method: 'DELETE',
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+
+        if (response.ok) {
+          alert('Meal plan deleted successfully');
+          loadMealPlans();
+        } else {
+          const result = await response.json();
+          alert(result.message || 'Failed to delete meal plan');
+        }
+      } catch (error) {
+        console.error('Error deleting meal plan:', error);
+        alert('An error occurred while deleting the meal plan');
+      }
+    }
+
+    // Check login status and update navbar
+    async function checkLoginStatus() {
+      try {
+        const token = localStorage.getItem('token');
+        const response = await fetch('/api/auth/status', {
+          headers: {
+            'Authorization': token ? `Bearer ${token}` : ''
+          }
+        });
+        const data = await response.json();
+        
+        if (data.loggedIn) {
+          document.getElementById('loginLink').parentElement.classList.add('d-none');
+          document.getElementById('signupLink').parentElement.classList.add('d-none');
+          document.getElementById('userNameContainer').classList.remove('d-none');
+          document.getElementById('userName').textContent = data.user.name;
+        } else {
+          document.getElementById('loginLink').parentElement.classList.remove('d-none');
+          document.getElementById('signupLink').parentElement.classList.remove('d-none');
+          document.getElementById('userNameContainer').classList.add('d-none');
+        }
+      } catch (error) {
+        console.error('Error checking login status:', error);
+      }
+    }
+
+    // Load users
+    async function loadUsers() {
+      try {
+        const token = localStorage.getItem('token');
+        const response = await fetch('/api/users', {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+        const users = await response.json();
+        
+        const container = document.getElementById('usersContainer');
+        container.innerHTML = '';
+        
+        users.forEach(user => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${user.name}</td>
+            <td>${user.email}</td>
+            <td>${user.isAdmin ? 'Yes' : 'No'}</td>
+            <td>
+              <button onclick="toggleAdminStatus('${user._id}', ${!user.isAdmin})" class="btn btn-sm ${user.isAdmin ? 'btn-warning' : 'btn-success'}">
+                ${user.isAdmin ? 'Remove Admin' : 'Make Admin'}
+              </button>
+            </td>
+          `;
+          container.appendChild(row);
+        });
+      } catch (error) {
+        console.error('Error loading users:', error);
+      }
+    }
+
+    // Toggle admin status
+    async function toggleAdminStatus(userId, makeAdmin) {
+      if (!confirm(`Are you sure you want to ${makeAdmin ? 'make' : 'remove'} this user an admin?`)) {
+        return;
+      }
+
+      try {
+        const token = localStorage.getItem('token');
+        const response = await fetch(`/api/users/${userId}/admin`, {
+          method: 'PUT',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ isAdmin: makeAdmin })
+        });
+
+        if (response.ok) {
+          alert(`User ${makeAdmin ? 'made' : 'removed from'} admin successfully`);
+          loadUsers();
+        } else {
+          const result = await response.json();
+          alert(result.message || 'Failed to update admin status');
+        }
+      } catch (error) {
+        console.error('Error updating admin status:', error);
+        alert('An error occurred while updating admin status');
+      }
+    }
+
+    // Load users and meal plans when page loads
+    document.addEventListener('DOMContentLoaded', () => {
+      loadUsers();
+      loadMealPlans();
+      checkLoginStatus();
+    });
+  </script>
+</body>
+</html> 

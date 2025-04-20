@@ -1,0 +1,30 @@
+[
+    {
+        "code" : "GALR210214",
+        "name" : "Gale Reefff",
+        "length" : "4 nights / 5 days",
+        "start" : "2025-02-14T08:00:00Z",
+        "resort" : "Emerald Bay, 3 stars",
+        "perPerson" : "799.00",
+        "image" : "reef1.jpg",
+        "description" : "<p>Gale Reef Sed et augue lorem. In sit aet placera"
+    } , {
+        "code" : "DAWR210315",
+        "name" : "Dawsons Reef",
+        "length" : "4 nights / 5 days",
+        "start" : "2025-03-15T08:00:00Z",
+        "resort" : "Blue Lagoon, 4 stars",
+        "perPerson" : "1199.00",
+        "image" : "reef2.jpg",
+        "description" : "<p>Dawsons Reef Sed et augue lorem. In sit aet placera"
+    } , {
+        "code" : "CLAR210621",
+        "name" : "Claires Reef",
+        "length" : "4 nights / 5 days",
+        "start" : "2025-06-21T08:00:00Z",
+        "resort" : "Coral Sands, 5 stars",
+        "perPerson" : "1999.00",
+        "image" : "reef3.jpg",
+        "description" : "<p>Claires Reef Sed et augue lorem. In sit aet placera"
+    }
+]

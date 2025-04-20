@@ -1,0 +1,615 @@
+/* Updated Fitness Website CSS */
+
+/* Body */
+body {
+    background-color: #FFFFFF; /* White background */
+    color: #333333; /* Dark grey text */
+    padding-top: 70px;
+    font-family: "Times New Roman", Times, serif;
+    margin: 0;
+}
+
+/* Background */
+#background {
+    background-color: #FFFFFF; /* Removed patterned bg */
+    min-height: 100vh;
+}
+
+/* Page Container */
+#page {
+    width: 960px;
+    margin: 0 auto;
+}
+
+/* Images */
+img {
+    border: 0;
+}
+
+/*------------------------------ Navigation ------------------------------*/
+/* Original sprite backgrounds removed in favor of a solid deep blue */
+#navigation {
+    background-color: #01579B; /* Deep blue background */
+    clear: both;
+    height: 50px;
+    width: 860px;
+    margin: 0 auto;
+    padding: 1px;
+}
+
+#navigation ul {
+    display: inline-block;
+    width: 860px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#navigation li {
+    float: left;
+    height: 49px;
+    padding: 0 15px;
+    margin: 0;
+    text-align: center;
+}
+
+#navigation li a {
+    color: #FFFFFF; /* White text */
+    display: block;
+    font: bold 14px/48px Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#navigation li a:hover {
+    color: #03A9F4; /* Light blue on hover */
+}
+
+#navigation li.selected a {
+    color: #03A9F4; /* Light blue for selected link */
+}
+
+/*------------------------------ HEADER ------------------------------*/
+#header {
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+
+/** Logo **/
+#logo {
+    float: left;
+    margin-bottom: 20px;
+    margin-left: 49px;
+}
+
+/*------------------------------ CONTENTS ------------------------------*/
+#contents {
+    display: inline-block;
+    width: 865px;
+    padding: 0 47px;
+}
+
+/* Headings */
+#contents h1 {
+    color: #FF9800; /* Orange heading */
+    font-family: 'Indie Flower', cursive;
+    font-size: 26px;
+    margin: 18px 0 20px;
+    padding-left: 2px;
+    text-transform: uppercase;
+}
+
+#contents h2 {
+    color: #03A9F4; /* Light blue subheading */
+    font-family: 'Indie Flower', cursive;
+    font-size: 22px;
+    margin: 0 0 30px;
+}
+
+#contents h2 a {
+    color: #03A9F4;
+    text-decoration: none;
+}
+
+/* Paragraphs */
+#contents p {
+    color: #333333;
+    font-size: 15px;
+    line-height: 30px;
+    margin: 0;
+    padding: 0 0 24px 2px;
+}
+
+#contents p a {
+    color: #333333;
+}
+
+#contents p a:hover {
+    color: #03A9F4;
+}
+
+/* Box styling (for content containers) */
+#contents div.box {
+    background-color: #F5F5F5; /* Light grey background */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    margin-left: 1px;
+    padding: 20px;
+}
+
+#contents div.body {
+    padding: 30px 40px 0;
+}
+
+/*------------------------------ Adbox & Ads ------------------------------*/
+#adbox {
+    background-color: #F5F5F5;
+    width: 852px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#adbox p {
+    font-size: 16px;
+}
+
+.ads {
+    float: right;
+    width: 220px;
+    border-left: 1px solid #bbbbbb;
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+/* Horizontal Rules */
+hr {
+    border: 0;
+    border-top: 1px solid #bbbbbb;
+    margin-bottom: 30px;
+}
+
+/* Underline style for section breaks */
+hr.underline {
+    width: 100%;
+    max-width: 400px;
+    border-top: 1px solid #FF9800; /* Orange underline */
+    margin: 50px auto;
+}
+
+/*------------------------------ MAIN ------------------------------*/
+#main {
+    float: left;
+    min-height: 100px;
+    width: 566px;
+}
+
+#main div.box {
+    background-color: #F5F5F5;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 12px;
+    padding: 20px;
+}
+
+#main div.box h3 {
+    color: #FF9800;
+    font-weight: normal;
+    letter-spacing: 1px;
+    border-bottom: 1px dotted #9c8964;
+    margin: 0;
+    padding: 0 0 12px;
+    text-transform: uppercase;
+}
+
+#main div.box h4 {
+    font: 22px/24px "Times New Roman", Times, serif;
+    font-weight: normal;
+    margin: 6px 0 0;
+}
+
+#main div.box h4 a {
+    color: #333333;
+    text-decoration: none;
+}
+
+#main div.box ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#main div.box ul li {
+    border-bottom: 1px dotted #9c8964;
+    padding-bottom: 12px;
+}
+
+/*------------------------------ SIDEBAR ------------------------------*/
+#sidebar {
+    float: right;
+    width: 285px;
+    background-color: #F5F5F5;
+    padding: 20px;
+}
+
+/*------------------------------ TESTIMONIALS ------------------------------*/
+#contents #testimonials h3 {
+    color: #03A9F4;
+    font-family: 'Indie Flower', cursive;
+    font-weight: normal;
+    letter-spacing: 1px;
+    border: none;
+    padding-bottom: 0;
+}
+
+#testimonials p {
+    line-height: 24px;
+    padding-bottom: 3px;
+}
+
+#testimonials p span {
+    float: right;
+}
+
+#testimonials p span a {
+    color: #03A9F4;
+    text-decoration: none;
+}
+
+/*------------------------------ ROOMS, FOODS, SITES ------------------------------*/
+/* (Now used for fitness workouts, meal plans, etc.) */
+#rooms, #foods, #sites {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#rooms li, #foods li, #sites li {
+    display: inline-block;
+    width: 784px;
+    border-top: 1px solid #b7b7b7;
+    padding: 30px 0;
+    position: relative;
+}
+
+#rooms li:first-child, #foods li:first-child, #sites li:first-child {
+    border-top: 0;
+}
+
+#rooms li img, #foods li img, #sites li img {
+    float: left;
+    border: 1px solid #03A9F4;
+    margin-right: 15px;
+}
+
+/*------------------------------ NEWS ------------------------------*/
+#news {
+    display: inline-block;
+    width: 784px;
+}
+
+#news > div {
+    width: 560px;
+    border-right: 1px solid #bbbbbb;
+    padding-right: 35px;
+}
+
+#news > div img {
+    border: 1px solid #03A9F4;
+    margin-bottom: 20px;
+}
+
+#news > div h2 {
+    margin-bottom: 12px;
+}
+
+#news > div span {
+    color: #333333;
+    display: block;
+    font-size: 15px;
+    line-height: 24px;
+    margin-bottom: 30px;
+}
+
+#news > div span.author {
+    color: #03A9F4;
+    display: block;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+#news div.sidebar {
+    float: right;
+    width: 160px;
+    padding: 0;
+}
+
+#news div.sidebar h3 {
+    color: #03A9F4;
+    font-size: 20px;
+    font-weight: normal;
+    border-top: 1px solid #b7b7b7;
+    margin: 0 0 12px;
+    padding-top: 18px;
+    text-transform: uppercase;
+}
+
+#news div.sidebar h3:first-child {
+    border: 0;
+    padding-top: 0;
+}
+
+#news div.sidebar ul {
+    list-style: none;
+    margin: 0 0 8px;
+    padding: 0;
+}
+
+#news div.sidebar ul li a {
+    color: #333333;
+    display: inline-block;
+    font-size: 15px;
+    margin-bottom: 6px;
+    text-decoration: none;
+}
+
+/*------------------------------ CONTACT ------------------------------*/
+#contact form {
+    float: right;
+    color: #333333;
+    height: 320px;
+    width: 420px;
+    border: 1px solid #333333;
+    padding: 19px 19px 6px;
+}
+
+#contact form table {
+    border-collapse: collapse;
+}
+
+#contact form table td {
+    padding-bottom: 6px;
+}
+
+#contact table td:first-child {
+    font-size: 14px;
+    line-height: 30px;
+    width: 180px;
+    text-transform: uppercase;
+}
+
+#contact table td.txtarea {
+    vertical-align: top;
+}
+
+#contact form input {
+    height: 17px;
+    line-height: 17px;
+    width: 278px;
+    border: 1px solid #333333;
+    border-radius: 2px;
+}
+
+#contact textarea {
+    height: 143px;
+    line-height: 17px;
+    width: 338px;
+    border: 1px solid #333333;
+    border-radius: 2px;
+    overflow: auto;
+    resize: none;
+}
+
+#contact input.btn {
+    cursor: pointer;
+    height: 26px;
+    width: 60px;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#contact input.btn:hover {
+    opacity: 0.8;
+}
+
+#contact p span {
+    display: block;
+    text-transform: uppercase;
+}
+
+/*------------------------------ FOOTER ------------------------------*/
+#footer {
+    color: #594334;
+    font-size: 14px;
+    line-height: 48px;
+    margin: -38px 0 20px;
+    padding-top: 42px;
+    text-transform: uppercase;
+}
+
+#footer > div {
+    background-color: #ac9e94;
+    height: 48px;
+    width: 822px;
+    border-bottom: 1px solid #72675f;
+    border-top: 1px solid #cdbeb2;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: right;
+}
+
+#footer ul.navigation {
+    float: left;
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#footer ul.navigation li {
+    float: left;
+    margin-right: 10px;
+}
+
+#footer ul.navigation li a {
+    color: #594334;
+    padding: 0 5px;
+    text-decoration: none;
+}
+
+#footer ul.navigation li a:hover {
+    color: #eee7c3;
+}
+
+#footer ul.navigation li.active a {
+    color: #fff;
+}
+
+#footer p {
+    margin: 0;
+    text-align: center;
+    text-transform: none;
+}
+
+/*------------------------------ CONNECT (Social Icons) ------------------------------*/
+#connect {
+    float: right;
+    display: inline-block;
+    line-height: 26px;
+    margin: 12px 0 0;
+}
+
+#connect a {
+    display: inline-block;
+    height: 23px;
+    width: 23px;
+    margin-left: 10px;
+}
+
+/*------------------------------ NEW DESIGN COMPONENTS ------------------------------*/
+
+/* Button Style */
+.btnc {
+    color: #FFFFFF;
+    background-color: #03A9F4;
+    border-color: #03A9F4;
+}
+
+/* Jumbotron */
+.jumbotron {
+    color: #FFFFFF;
+    background-color: #01579B;
+}
+
+/* Content Headings (if using .content) */
+.content h1 {
+    color: #FF9800;
+    font-family: 'Indie Flower', cursive;
+}
+
+.content h3 {
+    color: #03A9F4;
+    font-family: 'Indie Flower', cursive;
+}
+
+/* Underlined Horizontal Rule */
+hr.underline {
+    width: 100%;
+    max-width: 400px;
+    border-top: 1px solid #FF9800;
+    margin: 50px auto;
+}
+
+/* Card Alignments */
+.cardalign {
+    text-align: center;
+    color: #FF9800;
+}
+
+.cardcontainer {
+    margin-top: 2%;
+    padding: 15px;
+}
+
+/* Meal Plan Card */
+.meal-plan-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    background-color: #F5F5F5;
+}
+
+.meal-plan-card:hover {
+    transform: scale(1.05);
+}
+
+.meal-plan-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.meal-plan-info {
+    text-align: center;
+}
+
+.meal-plan-info h4 {
+    margin-top: 10px;
+    color: #FF9800;
+}
+
+.meal-plan-info p {
+    margin: 10px 0;
+    color: #333333;
+}
+
+.meal-plan-info .btn {
+    margin: 5px;
+    color: #FFFFFF;
+    background-color: #03A9F4;
+}
+
+/* Navbar and Footer dropdown menus */
+.dropdown-menu {
+    background-color: #343a40;
+    border: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 0, 0, 0.1);
+    transform: translateY(5px);
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-menu-up {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.dropdown-item {
+    color: #ffffff;
+    padding: 0.5rem 1.5rem;
+}
+
+.dropdown-item:hover {
+    background-color: #495057;
+    color: #ffffff;
+}
+
+.dropdown-item.active {
+    background-color: #495057;
+    color: #ffffff;
+}
+
+.dropdown-toggle {
+    color: #ffffff;
+}
+
+.dropdown-toggle:hover {
+    color: #ffffff;
+}

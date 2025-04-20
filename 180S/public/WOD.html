@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Workout of The Day - 180S</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><i class="fas fa-undo-alt"></i> 180S</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="WOD.html">Workout of The Day</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+              Meal Plans
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item text-white" href="mealplans.html">No Effort</a>
+              <a class="dropdown-item text-white" href="LowEffort.html">Low Effort</a>
+              <a class="dropdown-item text-white" href="FullEffort.html">Full Effort</a>
+              <a class="dropdown-item text-white" href="saved-meal-plans.html">Saved</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="revisions.html">Revisions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://buymeacoffee.com/zenpack" target="_blank">Buy Me a Coffee :)</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="login.html" id="loginLink">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-light ml-2" href="signup.html" id="signupLink">Sign Up</a>
+          </li>
+          <li class="nav-item d-none" id="userNameContainer">
+            <a class="nav-link" href="profile.html" id="userName"></a>
+          </li>
+          <li class="nav-item d-none" id="adminLinkContainer">
+            <a class="nav-link" href="admin-dashboard.html">Admin Dashboard</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-5 pt-5 mb-5">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1>Workout of The Day</h1>
+        <hr class="underline">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card bg-dark text-white mb-3">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+              <h1 class="card-title">HIIT Workout</h1>
+              <button id="saveHIITBtn" class="btn btn-primary" style="display: none;">
+                <i class="fas fa-bookmark"></i> Save Workout
+              </button>
+            </div>
+            <p class="card-text">
+              <p id="HIIT-workout">Loading...</p>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="card bg-dark text-white mb-3">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+              <h1 class="card-title">Bodybuilding Workout</h1>
+              <button id="saveBBBtn" class="btn btn-primary" style="display: none;">
+                <i class="fas fa-bookmark"></i> Save Workout
+              </button>
+            </div>
+            <p class="card-text">
+              <p id="BB-workout">Loading...</p>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Fetch the workout data from the Flask API
+    async function loadWorkout() {
+        try {
+            // First load the workout content
+            const response = await fetch('/api/workout/today');
+            const data = await response.json();
+            
+            if (data.HIIT_workout_of_the_day) {
+                document.getElementById("HIIT-workout").innerHTML = data.HIIT_workout_of_the_day;
+                document.getElementById("BB-workout").innerHTML = data.Bodybuilding_workout_of_the_day;
+            } else {
+                // Sample workout content when no workout is generated
+                document.getElementById("HIIT-workout").innerHTML = `
+                    <div class="alert alert-info">
+                        <strong>Sample HIIT Workout</strong> (Displayed because no workout was generated)
+                    </div>
+                    <p>Warm-up: 5 minutes light jogging</p>
+                    <p>Circuit 1 (3 rounds):</p>
+                    <ul>
+                        <li>Jump squats - 20 reps</li>
+                        <li>Mountain climbers - 30 seconds</li>
+                        <li>Burpees - 10 reps</li>
+                        <li>Rest 30 seconds between rounds</li>
+                    </ul>
+                    <p>Circuit 2 (3 rounds):</p>
+                    <ul>
+                        <li>High knees - 30 seconds</li>
+                        <li>Push-ups - 15 reps</li>
+                        <li>Plank - 45 seconds</li>
+                        <li>Rest 30 seconds between rounds</li>
+                    </ul>
+                    <p>Cool down: 5 minutes stretching</p>
+                `;
+
+                document.getElementById("BB-workout").innerHTML = `
+                    <div class="alert alert-info">
+                        <strong>Sample Bodybuilding Workout</strong> (Displayed because no workout was generated)
+                    </div>
+                    <p>Warm-up: 5 minutes dynamic stretching</p>
+                    <p>Upper Body Focus:</p>
+                    <ul>
+                        <li>Bench Press - 4 sets of 8-10 reps</li>
+                        <li>Pull-ups - 3 sets of 8-12 reps</li>
+                        <li>Shoulder Press - 3 sets of 10-12 reps</li>
+                        <li>Bicep Curls - 3 sets of 12-15 reps</li>
+                        <li>Tricep Dips - 3 sets of 10-12 reps</li>
+                    </ul>
+                    <p>Core:</p>
+                    <ul>
+                        <li>Plank - 3 sets of 45 seconds</li>
+                        <li>Russian Twists - 3 sets of 20 reps</li>
+                        <li>Leg Raises - 3 sets of 12-15 reps</li>
+                    </ul>
+                `;
+            }
+
+            // Then check if workouts are already saved
+            const token = localStorage.getItem('token');
+            if (token) {
+                try {
+                    const savedResponse = await fetch('/api/workouts/saved', {
+                        headers: {
+                            'Authorization': `Bearer ${token}`
+                        }
+                    });
+                    const savedWorkouts = await savedResponse.json();
+                    
+                    // Update HIIT button
+                    const saveHIITBtn = document.getElementById('saveHIITBtn');
+                    const hiitWorkout = savedWorkouts.find(w => w.workoutType === 'HIIT');
+                    if (hiitWorkout) {
+                        saveHIITBtn.innerHTML = '<i class="fas fa-bookmark"></i> Unsave Workout';
+                        saveHIITBtn.onclick = () => unsaveWorkout('hiit');
+                    } else {
+                        saveHIITBtn.innerHTML = '<i class="fas fa-bookmark"></i> Save Workout';
+                        saveHIITBtn.onclick = () => saveWorkout('hiit', document.getElementById('HIIT-workout').innerHTML);
+                    }
+
+                    // Update Bodybuilding button
+                    const saveBBBtn = document.getElementById('saveBBBtn');
+                    const bbWorkout = savedWorkouts.find(w => w.workoutType === 'Bodybuilding');
+                    if (bbWorkout) {
+                        saveBBBtn.innerHTML = '<i class="fas fa-bookmark"></i> Unsave Workout';
+                        saveBBBtn.onclick = () => unsaveWorkout('bb');
+                    } else {
+                        saveBBBtn.innerHTML = '<i class="fas fa-bookmark"></i> Save Workout';
+                        saveBBBtn.onclick = () => saveWorkout('bb', document.getElementById('BB-workout').innerHTML);
+                    }
+                } catch (error) {
+                    console.error('Error checking saved workouts:', error);
+                }
+            }
+        } catch (error) {
+            console.error('Error loading workout:', error);
+            // Show sample content on error
+            document.getElementById("HIIT-workout").innerHTML = `
+                <div class="alert alert-warning">
+                    <strong>Sample HIIT Workout</strong> (Displayed due to an error loading the workout)
+                </div>
+                <p>Warm-up: 5 minutes light jogging</p>
+                <p>Circuit 1 (3 rounds):</p>
+                <ul>
+                    <li>Jump squats - 20 reps</li>
+                    <li>Mountain climbers - 30 seconds</li>
+                    <li>Burpees - 10 reps</li>
+                    <li>Rest 30 seconds between rounds</li>
+                </ul>
+                <p>Circuit 2 (3 rounds):</p>
+                <ul>
+                    <li>High knees - 30 seconds</li>
+                    <li>Push-ups - 15 reps</li>
+                    <li>Plank - 45 seconds</li>
+                    <li>Rest 30 seconds between rounds</li>
+                </ul>
+                <p>Cool down: 5 minutes stretching</p>
+            `;
+
+            document.getElementById("BB-workout").innerHTML = `
+                <div class="alert alert-warning">
+                    <strong>Sample Bodybuilding Workout</strong> (Displayed due to an error loading the workout)
+                </div>
+                <p>Warm-up: 5 minutes dynamic stretching</p>
+                <p>Upper Body Focus:</p>
+                <ul>
+                    <li>Bench Press - 4 sets of 8-10 reps</li>
+                    <li>Pull-ups - 3 sets of 8-12 reps</li>
+                    <li>Shoulder Press - 3 sets of 10-12 reps</li>
+                    <li>Bicep Curls - 3 sets of 12-15 reps</li>
+                    <li>Tricep Dips - 3 sets of 10-12 reps</li>
+                </ul>
+                <p>Core:</p>
+                <ul>
+                    <li>Plank - 3 sets of 45 seconds</li>
+                    <li>Russian Twists - 3 sets of 20 reps</li>
+                    <li>Leg Raises - 3 sets of 12-15 reps</li>
+                </ul>
+            `;
+        }
+    }
+
+    // Call loadWorkout when the page loads
+    document.addEventListener('DOMContentLoaded', loadWorkout);
+
+    // Function to save workout
+    async function saveWorkout(workoutType, content) {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            alert('Please log in to save workouts');
+            return;
+        }
+
+        try {
+            const response = await fetch('/api/workouts/save', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify({
+                    workoutType: workoutType === 'hiit' ? 'HIIT' : 'Bodybuilding',
+                    content: content
+                })
+            });
+
+            if (response.ok) {
+                alert('Workout saved successfully!');
+                // Update button to show unsave option
+                const saveBtn = workoutType === 'hiit' ? document.getElementById('saveHIITBtn') : document.getElementById('saveBBBtn');
+                saveBtn.innerHTML = '<i class="fas fa-bookmark"></i> Unsave Workout';
+                saveBtn.onclick = () => unsaveWorkout(workoutType);
+            } else {
+                const errorData = await response.json();
+                alert('Error saving workout: ' + (errorData.error || 'Unknown error'));
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Error saving workout: ' + error.message);
+        }
+    }
+
+    // Function to unsave workout
+    async function unsaveWorkout(workoutType) {
+        const token = localStorage.getItem('token');
+        if (!token) return;
+
+        try {
+            const response = await fetch(`/api/workouts/saved/type/${workoutType === 'hiit' ? 'HIIT' : 'Bodybuilding'}`, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+
+            if (response.ok) {
+                alert('Workout unsaved successfully!');
+                // Update button to show save option
+                const saveBtn = workoutType === 'hiit' ? document.getElementById('saveHIITBtn') : document.getElementById('saveBBBtn');
+                saveBtn.innerHTML = '<i class="fas fa-bookmark"></i> Save Workout';
+                saveBtn.onclick = () => saveWorkout(workoutType, document.getElementById(workoutType === 'hiit' ? 'HIIT-workout' : 'BB-workout').innerHTML);
+            } else {
+                const errorData = await response.json();
+                alert('Error unsaving workout: ' + (errorData.error || 'Unknown error'));
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Error unsaving workout: ' + error.message);
+        }
+    }
+  </script>
+
+  <div id="footer" class="bg-dark text-white text-center py-3">
+    <div class="d-flex justify-content-center">
+      <ul class="navigation list-inline mb-0">
+        <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
+        <li class="list-inline-item"><a href="WOD.html" class="text-white">Workout of The Day</a></li>
+        <li class="list-inline-item dropdown">
+          <a class="text-white dropdown-toggle" href="#" id="footerDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Meal Plans
+          </a>
+          <div class="dropdown-menu" aria-labelledby="footerDropdown">
+            <a class="dropdown-item text-white" href="mealplans.html">No Effort</a>
+            <a class="dropdown-item text-white" href="LowEffort.html">Low Effort</a>
+            <a class="dropdown-item text-white" href="FullEffort.html">Full Effort</a>
+          </div>
+        </li>
+        <li class="list-inline-item"><a href="about.html" class="text-white">About</a></li>
+        <li class="list-inline-item"><a href="contact.html" class="text-white">Contact</a></li>
+        <li class="list-inline-item"><a href="revisions.html" class="text-white">Revisions</a></li>
+      </ul>
+    </div>
+    <p class="mb-0">&copy; 2025 by 180S. All Rights Reserved.</p>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <script>
+    // Check login status and update navbar
+    async function checkLoginStatus() {
+      try {
+        const token = localStorage.getItem('token');
+        const response = await fetch('/api/auth/status', {
+          headers: {
+            'Authorization': token ? `Bearer ${token}` : ''
+          }
+        });
+        const data = await response.json();
+        
+        if (data.loggedIn) {
+          document.getElementById('loginLink').parentElement.classList.add('d-none');
+          document.getElementById('signupLink').parentElement.classList.add('d-none');
+          document.getElementById('userNameContainer').classList.remove('d-none');
+          document.getElementById('userName').textContent = data.user.name;
+          
+          // Show save buttons
+          document.getElementById('saveHIITBtn').style.display = 'block';
+          document.getElementById('saveBBBtn').style.display = 'block';
+          
+          // Check if user is admin
+          if (data.user.isAdmin) {
+            document.getElementById('adminLinkContainer').classList.remove('d-none');
+          } else {
+            document.getElementById('adminLinkContainer').classList.add('d-none');
+          }
+        } else {
+          document.getElementById('loginLink').parentElement.classList.remove('d-none');
+          document.getElementById('signupLink').parentElement.classList.remove('d-none');
+          document.getElementById('userNameContainer').classList.add('d-none');
+          document.getElementById('adminLinkContainer').classList.add('d-none');
+          
+          // Hide save buttons
+          document.getElementById('saveHIITBtn').style.display = 'none';
+          document.getElementById('saveBBBtn').style.display = 'none';
+        }
+      } catch (error) {
+        console.error('Error checking login status:', error);
+      }
+    }
+
+    // Check login status when page loads
+    document.addEventListener('DOMContentLoaded', checkLoginStatus);
+  </script>
+</body>
+</html>

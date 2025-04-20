@@ -1,0 +1,7 @@
+<div class="container d-flex justify-content-center align-items-center" *ngIf="!isLoggedIn()" style="height: 70vh;">
+    <h2>Please login to continue!</h2>
+  </div>
+  <div class="container" *ngIf="isLoggedIn()">
+    <app-trip-listing></app-trip-listing>
+  </div>
+  
