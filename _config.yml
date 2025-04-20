@@ -1,8 +1,8 @@
 # Basic site info
 title: "Mohamed Elhassan"
 description: "Bachelor of Computer Science | Full‑Stack Dev & Cloud Engineer"
-url: "https://mohamed-elhassan.github.io/CapStone"  # your live URL
-baseurl: ""                                       # leave blank if on root
+url: "https://mohamed-elhassan.github.io/CapStone"
+baseurl: ""                                      
 
 # Theme & plugins
 remote_theme: pages-themes/cayman@v0.2.0
@@ -13,7 +13,7 @@ plugins:
 markdown: kramdown
 permalink: /:title/
 
-# Navigation menu (custom for Cayman)
+# Navigation menu
 navbar:
   - title: Home
     url: /
@@ -24,16 +24,13 @@ navbar:
   - title: Contact
     url: /contact/
 
-# Optional analytics (put your ID or remove)
+# Optional analytics
 google_analytics: 
 
 # Hide Cayman’s “Downloads” section
 show_downloads: false
 
-# Exclude anything you don’t want in your repo/site
 exclude:
   - README.md
   - node_modules
   - vendor
-
-# (You can add social links via a _data/social.yml if you like)
