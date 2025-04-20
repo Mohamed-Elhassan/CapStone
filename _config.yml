@@ -1,9 +1,39 @@
+# Basic site info
+title: "Mohamed Elhassan"
+description: "Bachelor of Computer Science | Full‑Stack Dev & Cloud Engineer"
+url: "https://mohamed-elhassan.github.io/CapStone"  # your live URL
+baseurl: ""                                       # leave blank if on root
+
+# Theme & plugins
 remote_theme: pages-themes/cayman@v0.2.0
 plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
-title: Mohamed Elhassan
-title: Mohamed Elhassan
-description: Computer Science ePortfolio
+  - jekyll-remote-theme
+
+# Build settings
+markdown: kramdown
+permalink: /:title/
+
+# Navigation menu (custom for Cayman)
+navbar:
+  - title: Home
+    url: /
+  - title: Projects
+    url: /projects/
+  - title: About
+    url: /about/
+  - title: Contact
+    url: /contact/
+
+# Optional analytics (put your ID or remove)
+google_analytics: 
+
+# Hide Cayman’s “Downloads” section
 show_downloads: false
-google_analytics:
-theme: jekyll-theme-cayman
+
+# Exclude anything you don’t want in your repo/site
+exclude:
+  - README.md
+  - node_modules
+  - vendor
+
+# (You can add social links via a _data/social.yml if you like)
