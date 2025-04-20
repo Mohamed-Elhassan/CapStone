@@ -8,6 +8,11 @@ theme:        jekyll-theme-cayman
 plugins:
   - jekyll-remote-theme
 
+permalink:   /:title/
+
+url:         "https://mohamed-elhassan.github.io"
+baseurl:     "/CapStone"
+
 # optional tweaks
 show_downloads: false
 
