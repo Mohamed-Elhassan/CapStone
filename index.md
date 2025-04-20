@@ -19,12 +19,5 @@ Right now, my focus is on expanding my cloud skills—learning AWS services, Kub
 - Agile methodologies & project management (Jira, Custom made project tracker)  
 - Containerization & orchestration (Docker)  
 
-## Featured Projects
-
-1. **180S**  
-   A full‑stack fitness app that fetches a “Workout of the Day” from ChatGPT and stores plans in MongoDB. Allows users to create accounts to save meal plans and workouts.
-   Admins can login and remove/add plans or change the workouts.  
-   [View on GitHub →](https://github.com/Mohamed-Elhassan/CapStone)
-
 ---
 
