@@ -13,7 +13,7 @@ title: Projects
   - [View on GitHub →](https://github.com/Mohamed-Elhassan/CapStone)
   - [Code Review on YouTube →](https://youtu.be/YPWNobDqtRk)
 
-## Please check out my GitHub for all uploaded projects throughout my Bachelor's degree.
+### Please check out my GitHub for all uploaded projects throughout my Bachelor's degree.
 
 [View Github](https://github.com/Mohamed-Elhassan)
 
