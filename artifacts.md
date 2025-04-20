@@ -7,11 +7,8 @@ title: Artifacts
 
 Below is a code review link and PDFs I’ve included in this portfolio. Click any link to download:
 
-
+[Code Review on YouTube →](https://youtu.be/YPWNobDqtRk)
 <ul>
-  <li>
-    [Code Review on YouTube →](https://youtu.be/YPWNobDqtRk)
-  </li>
   <li>
     <a 
       href="{{ '/assets/css/pdfs/software-design-engineering.pdf' | relative_url }}" 
