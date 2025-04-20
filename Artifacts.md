@@ -1,13 +1,17 @@
 ---
 layout: default
-title: Documents
+title: Artifacts
 ---
 
-# Documents
+# Artifacts
 
-Below are the PDFs I’ve included in this portfolio. Click any link to download:
+Below is a code review link and PDFs I’ve included in this portfolio. Click any link to download:
+
 
 <ul>
+  <li>
+    [Code Review on YouTube →](https://youtu.be/YPWNobDqtRk)
+  </li>
   <li>
     <a 
       href="{{ '/assets/css/pdfs/software-design-engineering.pdf' | relative_url }}" 
