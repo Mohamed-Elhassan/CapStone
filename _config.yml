@@ -24,8 +24,8 @@ navbar:
     url:   /about/
   - title: Projects
     url:   /projects/
-  - title: Documents
-    url: /documents/
+  - title: Artifacts
+    url: /artifacts/
   - title: Contact
     url:   /contact/
 
