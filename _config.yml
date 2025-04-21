@@ -1,9 +1,31 @@
+# site meta
+title:       "Mohamed Elhassan"
+description: "Computer Science ePortfolio"
+
+# cayman via remote_theme
 remote_theme: pages-themes/cayman@v0.2.0
+theme:        jekyll-theme-cayman
 plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
-title: Mohamed Elhassan
-title: Mohamed Elhassan
-description: Computer Science ePortfolio
+  - jekyll-remote-theme
+
+permalink:   /:title/
+
+url:         "https://mohamed-elhassan.github.io"
+baseurl:     "/CapStone"
+
+# optional tweaks
 show_downloads: false
-google_analytics:
-theme: jekyll-theme-cayman
+
+# nav
+navbar:
+  - title: Home
+    url:   /
+  - title: About
+    url:   /about/
+  - title: Projects
+    url:   /projects/
+  - title: Artifacts
+    url: /artifacts/
+  - title: Contact
+    url:   /contact/
+
