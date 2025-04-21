@@ -12,6 +12,7 @@ title: Projects
    Admins can login and remove/add plans or change the workouts.  
   - [View on GitHub →](https://github.com/Mohamed-Elhassan/CapStone)
   - [Code Review on YouTube →](https://youtu.be/YPWNobDqtRk)
+  - [Download Original Project Zip →](https://github.com/Mohamed-Elhassan/CapStone/raw/main/travlr%20-%20Original.zip)
 
 ### Please check out my GitHub for all uploaded projects throughout my Bachelor's degree.
 
